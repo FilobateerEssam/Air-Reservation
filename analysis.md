@@ -5,7 +5,9 @@ Property :
     - price /day
     - description
     - place           *
+    - categories      *
 
+    
     - rating          *
         - room show rating
         — add rate [booked Rooms]
