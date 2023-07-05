@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'about'    ,
     'settings' ,
     "taggit",
+    'django_summernote',
+    'bootstrap4',
+    'django_filters',
+    
 ]
 
 MIDDLEWARE = [
@@ -138,3 +142,5 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
+

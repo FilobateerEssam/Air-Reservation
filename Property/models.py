@@ -35,7 +35,7 @@ class Property(models.Model):
 
     # help return URL of the Property
     def get_absolute_url(self):
-        #Url Parrent (namespace):
+        #Url Parrent (namespace):name of the detail class
         return reverse('Property:property_detail', kwargs={"slug": self.slug})
     
     
@@ -94,10 +94,10 @@ class PropertyBook(models.Model):
 
     user = models.ForeignKey(User,related_name='book_owner',on_delete= models.CASCADE)
     property = models.ForeignKey(Property,related_name='book_property',on_delete= models.CASCADE)
-    date_from = models.DateTimeField(default=timezone.now)
-    date_to = models.DateTimeField(default=timezone.now)
-    guest =  models.CharField(max_length=2, choices=COUNT)
-    children = models.CharField(max_length=2, choices=COUNT)
+    date_from = models.DateField(default=timezone.now)
+    date_to = models.DateField(default=timezone.now)
+    guest =  models.IntegerField(max_length=2, choices=COUNT)
+    children = models.IntegerField(max_length=2, choices=COUNT)
 
 
     def __str__(self) :
