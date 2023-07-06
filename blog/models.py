@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from django.utils.text import slugify
+from django.urls import reverse
 
 # Create your models here.
 
@@ -29,6 +30,11 @@ class Post(models.Model):
 
        super(Post, self).save(*args, **kwargs) # Call the real save() method
 
+
+    # help return URL of the Property
+    def get_absolute_url(self):
+        #Url Parrent (namespace):name of the detail class
+        return reverse('blog:post_detail', kwargs={"slug": self.slug})
 
 
     def __str__(self):
