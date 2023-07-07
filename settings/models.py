@@ -12,6 +12,7 @@ class Settings(models.Model):
     fb_tink = models.URLField(max_length = 200)
     twitter_link = models.URLField(max_length = 200)
     instagram_link =  models.URLField(max_length = 200)
+    address = models.TextField(max_length=100000)
 
     def __str__(self):
         return self.site_name
